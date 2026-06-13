@@ -34,30 +34,34 @@ Ensure your root project directory contains the following structural files befor
 
 1. Clone the repository
 
-git clone [https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git](https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git)
+        git clone [https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git](https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git)
 
-cd IMDB-Sentiment-GRU-Engine
+        cd IMDB-Sentiment-GRU-Engine
 
 2. Create a Virtual Environment
 
 Isolate the project dependencies to ensure a clean installation.
 
-python -m venv env
+    python -m venv env
 
 3. Activate the Environment
 
 Windows: 
-env\Scripts\activate
+
+    env\Scripts\activate
 
 Mac/Linux:
-source env/bin/activate
+
+    source env/bin/activate
 
 4. Install Dependencies
+   
 Install the required packages directly via pip (ensure your virtual environment is active):
 
-pip install requirements.txt
+    pip install requirements.txt
 
 5. Launch the Dashboard
+   
 Start the local Streamlit application server:
 
-streamlit run app.py
+    streamlit run app.py
