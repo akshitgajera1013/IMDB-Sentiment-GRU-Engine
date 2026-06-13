@@ -6,6 +6,18 @@
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000.svg)
 
 
+## 📊 About the Dataset
+This model was trained and evaluated using the **IMDB Large Movie Review Dataset**, a highly recognized benchmark dataset for Natural Language Processing (NLP) and binary sentiment classification. 
+
+The dataset consists of highly polar movie reviews, allowing the sequence model to learn distinct linguistic patterns associated with positive and negative human emotions.
+
+**Dataset Features Used:**
+* `cleaned_review` (Feature): The raw textual data of the movie review. Prior to training, this text underwent standard NLP preprocessing (e.g., lowercasing, HTML tag removal, and special character stripping) to optimize the tensor mapping for the GRU's embedding layer.
+* `sentiment` (Target): The label-encoded classification variable representing the emotional tone of the review. 
+  * `0` = Negative Sentiment
+  * `1` = Positive Sentiment
+
+
 A production-grade Deep Learning text classification dashboard built using a **Gated Recurrent Unit (GRU)** architecture trained on the IMDB Movie Review Dataset. The web layout features professional UI integration, interactive validation analytics dashboards, real-time textual inference profiling, and batch parsing utility pipelines.
 
 ## ✨ Core Features
