@@ -8,6 +8,14 @@
 
 Deployment Link:- https://imdb-sentiment-gru-engine-nozykaxlwgc9vtxa58guct.streamlit.app/
 
+
+#UI
+![Output](images/1.png)
+![Output](images/2.png)
+![Output](images/3.png)
+
+
+
 ## 📊 About the Dataset
 This model was trained and evaluated using the **IMDB Large Movie Review Dataset**, a highly recognized benchmark dataset for Natural Language Processing (NLP) and binary sentiment classification. 
 
