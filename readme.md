@@ -6,6 +6,8 @@
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000.svg)
 
 
+Deployment Link:- https://imdb-sentiment-gru-engine-nozykaxlwgc9vtxa58guct.streamlit.app/
+
 ## 📊 About the Dataset
 This model was trained and evaluated using the **IMDB Large Movie Review Dataset**, a highly recognized benchmark dataset for Natural Language Processing (NLP) and binary sentiment classification. 
 
