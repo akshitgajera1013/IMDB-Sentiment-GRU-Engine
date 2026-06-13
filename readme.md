@@ -1,7 +1,10 @@
 # 🎬 IMDB Sentiment GRU Engine
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B.svg)](https://streamlit.io/)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0%2B-FF6F00.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-Framework-FF4B4B.svg)
+![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000.svg)
+
 
 A production-grade Deep Learning text classification dashboard built using a **Gated Recurrent Unit (GRU)** architecture trained on the IMDB Movie Review Dataset. The web layout features professional UI integration, interactive validation analytics dashboards, real-time textual inference profiling, and batch parsing utility pipelines.
 
