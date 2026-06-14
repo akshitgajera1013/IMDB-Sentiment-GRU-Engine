@@ -1,92 +1,340 @@
-# 🎬 IMDB Sentiment GRU Engine
+# 🎬 IMDB Sentiment Analysis Engine
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0%2B-FF6F00.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-Framework-FF4B4B.svg)
+### Deep Learning Powered Movie Review Classification using RNN, LSTM & GRU
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00.svg)
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-D00000.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B.svg)
+![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+---
 
-Deployment Link:- https://imdb-sentiment-gru-engine-nozykaxlwgc9vtxa58guct.streamlit.app/
+## 🚀 Live Demo
 
+### 🌐 Deployment
 
-#UI
-![Output](images/1.png)
-![Output](images/2.png)
-![Output](images/3.png)
+https://imdb-sentiment-gru-engine-nozykaxlwgc9vtxa58guct.streamlit.app/
 
+---
 
+## 📌 Project Overview
 
-## 📊 About the Dataset
-This model was trained and evaluated using the **IMDB Large Movie Review Dataset**, a highly recognized benchmark dataset for Natural Language Processing (NLP) and binary sentiment classification. 
+IMDB Sentiment Analysis Engine is a production-ready NLP dashboard that predicts whether a movie review expresses a **Positive** or **Negative** sentiment.
 
-The dataset consists of highly polar movie reviews, allowing the sequence model to learn distinct linguistic patterns associated with positive and negative human emotions.
+The project explores and compares three popular Recurrent Neural Network architectures:
 
-**Dataset Features Used:**
-* `cleaned_review` (Feature): The raw textual data of the movie review. Prior to training, this text underwent standard NLP preprocessing (e.g., lowercasing, HTML tag removal, and special character stripping) to optimize the tensor mapping for the GRU's embedding layer.
-* `sentiment` (Target): The label-encoded classification variable representing the emotional tone of the review. 
-  * `0` = Negative Sentiment
-  * `1` = Positive Sentiment
+* Simple RNN
+* LSTM (Long Short-Term Memory)
+* GRU (Gated Recurrent Unit)
 
+After experimentation, the **GRU model achieved the best balance between performance, convergence speed, and generalization**, making it the final deployed model.
 
-A production-grade Deep Learning text classification dashboard built using a **Gated Recurrent Unit (GRU)** architecture trained on the IMDB Movie Review Dataset. The web layout features professional UI integration, interactive validation analytics dashboards, real-time textual inference profiling, and batch parsing utility pipelines.
+The application provides:
 
-## ✨ Core Features
-* 🔮 **Real-Time Classifier:** Type or paste any movie review into the UI to instantly see the neural network's sentiment prediction (Positive/Negative) alongside a confidence probability gauge.
-* 📊 **Model Validation Analytics:** Explore the interactive confusion matrix and classification reports detailing the model's 88% accuracy across 9,917 test samples.
-* 📁 **Batch Processing Pipeline:** Upload `.csv` or `.xlsx` files containing hundreds of reviews to process them concurrently and download the sentiment predictions as a new file.
+* Real-time sentiment prediction
+* Confidence score estimation
+* Batch review processing
+* Model evaluation dashboard
+* Downloadable prediction results
+
+---
+
+## 🧠 Problem Statement
+
+Movie reviews contain rich textual information that reflects user sentiment.
+
+Traditional machine learning models struggle to capture long-term dependencies in text sequences.
+
+To solve this problem, Recurrent Neural Networks were explored and compared to identify the most effective architecture for sentiment classification.
+
+---
+
+## 📊 Dataset Information
+
+### IMDB Large Movie Review Dataset
+
+The dataset contains highly polarized movie reviews.
+
+| Attribute    | Description         |
+| ------------ | ------------------- |
+| Feature      | Review Text         |
+| Target       | Sentiment           |
+| Classes      | Positive / Negative |
+| Dataset Size | 50,000 Reviews      |
+
+### Target Encoding
+
+| Sentiment | Label |
+| --------- | ----- |
+| Negative  | 0     |
+| Positive  | 1     |
+
+---
+
+## 🔧 NLP Preprocessing Pipeline
+
+The following preprocessing steps were applied:
+
+### Text Cleaning
+
+* Convert text to lowercase
+* Remove HTML tags
+* Remove URLs
+* Remove punctuation
+
+### NLP Processing
+
+* Tokenization
+* Stopword Removal
+* Lemmatization
+
+### Sequence Preparation
+
+* Keras Tokenizer
+* Vocabulary Size: 10,000
+* Sequence Padding
+* Maximum Sequence Length: 300
+
+---
+
+## 🏗️ Deep Learning Architecture Comparison
+
+Three sequence models were trained and evaluated:
+
+### 1️⃣ Simple RNN
+
+Embedding Layer
+↓
+SimpleRNN(64)
+↓
+Dropout(0.2)
+↓
+Dense(1, Sigmoid)
+
+---
+
+### 2️⃣ LSTM
+
+Embedding Layer
+↓
+LSTM(64)
+↓
+Dropout(0.2)
+↓
+Dense(1, Sigmoid)
+
+---
+
+### 3️⃣ GRU (Final Model)
+
+Embedding Layer
+↓
+GRU(64)
+↓
+Dropout(0.2)
+↓
+Dense(1, Sigmoid)
+
+---
+
+## 🏆 Why GRU Was Selected
+
+During experimentation:
+
+✅ Faster training
+
+✅ Lower computational cost
+
+✅ Better convergence
+
+✅ Strong generalization capability
+
+✅ Best validation performance
+
+Therefore, the GRU model was selected as the production model and deployed through Streamlit.
+
+---
+
+## ⚙️ Hyperparameters
+
+| Parameter           | Value               |
+| ------------------- | ------------------- |
+| Vocabulary Size     | 10,000              |
+| Embedding Dimension | 128                 |
+| Sequence Length     | 300                 |
+| RNN Units           | 64                  |
+| Dropout             | 0.2                 |
+| Batch Size          | 64                  |
+| Epochs              | 5                   |
+| Optimizer           | Adam                |
+| Loss Function       | Binary Crossentropy |
+
+---
 
 ## 📈 Model Performance
-The serialized sequential neural network reaches a high performance accuracy score of **88%** across an independent test evaluation data partition:
 
-* **Overall Accuracy:** 0.88
-* **Negative Sentiment F1-Score:** 0.89 (0.87 Precision / 0.90 Recall)
-* **Positive Sentiment F1-Score:** 0.88 (0.90 Precision / 0.87 Recall)
+### Final GRU Model
 
-## 📁 Architecture Setup
-Ensure your root project directory contains the following structural files before executing the application:
+| Metric    | Score |
+| --------- | ----- |
+| Accuracy  | 88%   |
+| Precision | 90%   |
+| Recall    | 87%   |
+| F1 Score  | 88%   |
 
+The model was evaluated on approximately 10,000 unseen movie reviews.
 
-📦 IMDB-Sentiment-GRU-Engine
+---
 
-    ┣ 📜 app.py                  # Streamlit Interactive Dashboard Front-End 
-    ┣ 📜 best_gru_model.keras    # Pre-trained Keras GRU Network Weights (Keras 3)
-    ┣ 📜 tokenizer.pkl           # Pickled Keras TextTokenizer Instance
-    ┣ 📜 model_config.pkl        # Pickled serialized hyperparameter constraints
-    ┗ 📜 README.md               # Project documentation
+## 🎯 Features
 
-🚀 Local Installation & Setup
-⚠️ Important Notice for Windows Users: This project utilizes the CPU-only version of TensorFlow (tensorflow-cpu) running inside a strictly isolated Virtual Environment to prevent common pywrap_function_lib DLL load errors.
+### 🔮 Real-Time Prediction
 
-1. Clone the repository
+Enter a movie review and instantly obtain:
 
-        git clone [https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git](https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git)
+* Predicted Sentiment
+* Confidence Score
+* Probability Distribution
 
-        cd IMDB-Sentiment-GRU-Engine
+---
 
-2. Create a Virtual Environment
+### 📊 Evaluation Dashboard
 
-Isolate the project dependencies to ensure a clean installation.
+Includes:
 
-    python -m venv env
+* Confusion Matrix
+* Classification Report
+* Performance Metrics
 
-3. Activate the Environment
+---
 
-Windows: 
+### 📁 Batch Prediction
 
-    env\Scripts\activate
+Upload:
 
-Mac/Linux:
+* CSV Files
+* Excel Files
 
-    source env/bin/activate
+Generate sentiment predictions for hundreds of reviews simultaneously.
 
-4. Install Dependencies
-   
-Install the required packages directly via pip (ensure your virtual environment is active):
+---
 
-    pip install requirements.txt
+## 🖼️ Application Screenshots
 
-5. Launch the Dashboard
-   
-Start the local Streamlit application server:
+### Dashboard Home
 
-    streamlit run app.py
+![Dashboard](images/1.png)
+
+### Prediction Interface
+
+![Prediction](images/2.png)
+
+### Analytics Dashboard
+
+![Analytics](images/3.png)
+
+---
+
+## 📂 Project Structure
+
+IMDB-Sentiment-GRU-Engine
+
+├── app.py
+├── best_gru_model.keras
+├── tokenizer.pkl
+├── model_config.pkl
+├── images/
+├── requirements.txt
+└── README.md
+
+---
+
+## 🛠️ Technology Stack
+
+### Programming
+
+* Python
+
+### Deep Learning
+
+* TensorFlow
+* Keras
+
+### NLP
+
+* NLTK
+
+### Data Processing
+
+* NumPy
+* Pandas
+
+### Visualization
+
+* Matplotlib
+* Seaborn
+
+### Deployment
+
+* Streamlit Cloud
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
+
+git clone https://github.com/akshitgajera1013/IMDB-Sentiment-GRU-Engine.git
+
+cd IMDB-Sentiment-GRU-Engine
+
+### Create Virtual Environment
+
+python -m venv env
+
+### Activate Environment
+
+Windows
+
+env\Scripts\activate
+
+Mac/Linux
+
+source env/bin/activate
+
+### Install Dependencies
+
+pip install -r requirements.txt
+
+### Run Application
+
+streamlit run app.py
+
+---
+
+## 🔮 Future Improvements
+
+* Bidirectional GRU
+* Attention Mechanism
+* Transformer-based Models (BERT)
+* Explainable AI Dashboard
+* Multi-class Emotion Classification
+* Docker Deployment
+* CI/CD Integration
+
+---
+
+## 👨‍💻 Author
+
+### Akshit Gajera
+
+Data Science & Machine Learning Enthusiast
+
+GitHub:
+https://github.com/akshitgajera1013
+
+---
+
+⭐ If you found this project useful, don't forget to star the repository.
